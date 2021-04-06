@@ -15,11 +15,11 @@ Use pip install for the requirements.txt:  pip install -r requirements.txt
 
 GitHub Repository for Street Centrality
 
-Intent of Models
+Intent of Modual
 
 The Python project determines centrality (9 measures; betweeeness, closeness, degree, efficiency, eigenvector, harmonic, Katz, straightness, and current flow centrality). The key module, networkAnalysis.py, does most of the centrality measures. The analysis is, however, launched from networkOutput.py, which enables output data in .csv and .shp files. The shapefiles are for edges, while the .csv can be used for nodes. The shapefile edge centrality are mean values for two nodes in edges.
 
-Users do not need to do anything except launch networkOutput.py and then select the file they want. The analysis is automated after this. Be sure to have Python 3.6+ installed. If using another version of Python, then edit the launch.sh file to fit the version of Python you have installed.
+Users do not need to do anything except launch networkOutput.py and then select the file they want. The analysis is automated after this. Be sure to have Python 3.6+ installed. If using another version of Python, then edit the launch.sh file to fit the version of Python you have installed.  The code was tested on Python 3.8 as well.
 
 Data Requirements
 
