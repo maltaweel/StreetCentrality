@@ -1,4 +1,4 @@
-<b>Libraries Used</b>
+Libraries Used
 
 Python 3.6+ was used in development of this plugin. The following are the python libraries used:
 
