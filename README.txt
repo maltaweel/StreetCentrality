@@ -1,47 +1,45 @@
 <b>Libraries Used</b>
 
-Python 3.6+ was used in development of this tool. The following are the python libraries used and should be installed:
+Python 3.6+ was used in development of this plugin. The following are the python libraries used:
 
-networkx==2.4
 pysal==2.0.0
+pandas==1.0.5
+networkx==2.4
+numpy==1.19.5
+Shapely==1.7.1
+geopandas==0.9.0
 PyQt4==4.11.4
-PyQt5==5.15.1
+PyQt5==5.15.4
+
+Use pip install for the requirements.txt:  pip install -r requirements.txt
+
+GitHub Repository for Street Centrality
+
+Intent of Models
+
+The Python project determines centrality (9 measures; betweeeness, closeness, degree, efficiency, eigenvector, harmonic, Katz, straightness, and current flow centrality). The key module, networkAnalysis.py, does most of the centrality measures. The analysis is, however, launched from networkOutput.py, which enables output data in .csv and .shp files. The shapefiles are for edges, while the .csv can be used for nodes. The shapefile edge centrality are mean values for two nodes in edges.
+
+Users do not need to do anything except launch networkOutput.py and then select the file they want. The analysis is automated after this. Be sure to have Python 3.6+ installed. If using another version of Python, then edit the launch.sh file to fit the version of Python you have installed.
+
+Data Requirements
+
+To run the modules, you need to have a shapefile that has snapped street segments where each link is two nodes consisting of a start and end node. This will make the street segments a graph that is analysed in the modules. The outputs of the models are csv files that have the point data (the nodes) of the street segments that are then associated with a given analysis (e.g., number of times visited). Sample Data are provided within the project code (Sample_Data) but users can also use their own data.
+
+Key Analysis Code:
 
 
-<i>GitHub Repository for StreetCentrality</i>
+Graph Analysis
 
-The GitHub location of StreetAnalysis can be found here:  https://github.com/maltaweel/StreetAnalysis
+In this analysis, a graph is created which is used to study the street network. This is applied in the networkAnalysis.py module. The different analyses applied are:  global network efficiency (, centrality measures, betweenness, closeness, degree, efficiency, straightness centrality. The results are provided as csv files (globalEfficiency, efficiencyCentrality, straightnessCentarlity, and nodeCentrality). The algorithm applies the methods as discussed in Port et al. (2006) for efficiency. Additionally, for centrality metrics calculated, Networkx is used. 
 
-<i>Intent of Models</i>
+Other Folders
 
-The models applied provide a relatively rapid and simple way to assess street networks to see where segments are likely to have greater traffic (pedestrian) based on relative distance within urban contexts. The intent is to demonstrate where traffic may imply social interaction or reflect social significance based on space syntax methods. Additionally, algorithms apply different measures of centrality and efficiency in measuring the street network using well known graph theoretical methods. The intent is to produce measures that are comparable and that can be statistically assessed (e.g., distribution of nodes travelled, centrality variations, etc.).
-
-<i>Data Requirements</i>
-
-To run the modules, you need to have a shapefile that has snapped street segments where each link is two nodes consisting of a start and end node. This will make the street segments a graph that is analysed in the modules. The outputs of the models are .csv files that have the point data (the nodes) of the street segments that are then associated with a given analysis (e.g., number of times visited). You can vectorize the outputs to QGIS or other GIS platforms if you like or simply do statistical analyses of the data. 
-
-<i>Key Analysis Code</i>
-
-Street Network Analysis
-
-The first analysis is the Street Network Analysis, which applies the loadApplyModel.py module. This is an iterative model whereby every node is used once as a starting node and each nodes is also a destination. The intent is to determine which nodes, and thereby segments, are traversed the most. The nearest path analysis uses a Dijkstra algorithm. This method is comparable to the Standard Decision Model used in Altaweel & Wu (2010), except no metabolism and agent speed is used. Additionally, the assumption is that the surface is relatively level or elevation is of minor consequence. Thus, distance is how edge weights, which are street segments, are determined. After the model is completed, an output file (called results.csv) is produced which has the nodes (x and y values) and number of times the node was traversed. 
-
-Road Graph Analysis
-
-In this analysis, a graph is created which is used to study the street network. This is applied in the networkAnalysis.py module. The different analyses applied are:  global network efficiency, centrality measures, which includes betweenness, closeness, and degree centrality, efficiency centrality, and straightness centrality. The results are provided as csv files (globalEfficiency, efficiencyCentrality, straightnessCentarlity, and nodeCentrality). The algorithm applies the methods as discussed in Port et al. (2006). This provides another set of measures to compare between different networks or graphs.  For further detail, see networkAnalysis.py.
-
-<i>Running Modules</i>
-
-To run loadApplyModel.py, simply run the module and you will be promopted to select an input (.shp) file and then you will input where to output the results. The networkAnalysis.py module works the same way and you can run without any input arguments but you will be asked to chose an input file and indicate where to output the results (.csv files). 
-
-<i>Other Folders</i>
-
-HTML_Documentation: This provides the html pydocs which provide information on the methods applied in relevant modules.
+output: Data outputted from analysis conducted are placed here. Example output is given by default; however, if the user runs his/her analysis, the .csv and .shp outputs will automatically be placed in this folder.
 
 Sample_Data: Sample street network data to test the analyses.
 References:  This provides the references used to shape the algorithms applied and discussed above.
 
-<i>References</i> 
+References
 
 Altaweel, M; Wu, Y. (2010). Route selection and pedestrian traffic: applying an integrated modeling approach to understanding movement. Structure and Dynamics: eJournal of Anthropological and Related Sciences 4(2).Retrieved from https://escholarship.org/uc/item/6898p5vm.
 
