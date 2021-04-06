@@ -1,0 +1,10 @@
+
+name=StreetAnalysis
+description=Analysis for Street Networks using input .shp files
+version=0.1
+author=
+email=
+
+about=Module for analysing street networks and centrality for street nodes. It provides nine centarlity analyses of street node and produces mean centrality edge values. Globel efficiency measures are also provided. The modul has been used to assess modern and ancient street networks applying space syntax concepts. Users are encouraged to look at https://networkx.github.io/documentation/ for more on NetworkX used for centrality measures.
+
+tags=python

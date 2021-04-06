@@ -1,0 +1,8 @@
+pysal==2.0.0
+pandas==1.0.5
+networkx==2.4
+numpy==1.19.5
+Shapely==1.7.1
+geopandas==0.9.0
+PyQt4==4.11.4
+PyQt5==5.15.4
