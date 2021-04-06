@@ -1,6 +1,8 @@
 '''
-Analysis to look at all possible areas traversed based on road segments and starting points within road segments.
-
+Analysis to load road segments. 
+The module also does some analysis (a form of betweenness centrality) 
+but is not needed if networkOuput is used to launch the module.
+ 
 Created on Nov 7, 2018
 
 __author__: 

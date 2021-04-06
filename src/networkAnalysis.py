@@ -1,8 +1,9 @@
 '''
-Methods to conduct the analysis as described in:
+Methods to conduct the efficiency analysis as described in:
 Porta et al. 2006. The network analysis of urban streets: a primal approach. Environment and Planning B: Planning and Design 33:705-725.
 
-The class conducts efficiency tests on the entire graph and also on nodes. Centrality measures are also conducted. 
+The class conducts efficiency tests on the entire graph and also on nodes. 
+Centrality measures are also conducted using Networkx. 
 Created on Nov 12, 2018
 
 __author__: 
